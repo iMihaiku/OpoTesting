@@ -8,6 +8,7 @@ export default function ListQuestions({
   setAddQuestion,
   setQuestionActive
 }) {
+  console.log(data)
   const handleClick = (e, item) => {
     e.preventDefault()
 

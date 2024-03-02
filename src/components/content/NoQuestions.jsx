@@ -5,14 +5,29 @@ import style from './customComponents.module.css'
 import { useState } from 'react'
 import AddQuestion from './AddQuestion'
 
-export default function Questions({ testId }) {
+export default function Questions({
+  questions,
+  testId,
+  questionActive,
+  setQuestionActive,
+  setListOfQuestions
+}) {
   const [addQuestion, setAddQuestion] = useState(false)
   const handleClick = () => {
     setAddQuestion(true)
   }
   return (
     <section className={style.main}>
-      {addQuestion ? <AddQuestion setAddQuestion={setAddQuestion} testId={testId}/> : null}
+      {addQuestion ? (
+        <AddQuestion
+          testId={testId}
+          setAddQuestion={setAddQuestion}
+          questionActive={questionActive}
+          setQuestionActive={setQuestionActive}
+          questions={questions}
+          setListOfQuestions={setListOfQuestions}
+        />
+      ) : null}
       <article className={style.noQuestions}>
         <Empty
           image={Empty.PRESENTED_IMAGE_SIMPLE}

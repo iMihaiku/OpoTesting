@@ -3,9 +3,15 @@ import style from './customComponents.module.css'
 import ListQuestions from '@/components/content/ListQuestions'
 import { useState } from 'react'
 import AddQuestion from './AddQuestion'
-export default function Questions({ questions, testId }) {
+export default function Questions({
+  questions,
+  testId,
+  questionActive,
+  setQuestionActive,
+  setListOfQuestions
+}) {
   const [addQuestion, setAddQuestion] = useState(false)
-  const [questionActive, setQuestionActive] = useState({})
+
   const handleAnadir = () => {
     setQuestionActive({})
     setAddQuestion(true)
@@ -18,6 +24,7 @@ export default function Questions({ questions, testId }) {
           setAddQuestion={setAddQuestion}
           questionActive={questionActive}
           setQuestionActive={setQuestionActive}
+          setListOfQuestions={setListOfQuestions}
           questions={questions}
         />
       ) : (

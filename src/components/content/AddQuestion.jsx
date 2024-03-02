@@ -14,7 +14,8 @@ export default function AddQuestion({
   testId,
   questionActive,
   setQuestionActive,
-  questions
+  questions,
+  setListOfQuestions
 }) {
   const NUMBER_OF_ANSWERS = 3
   const [messageApi, contextHolder] = message.useMessage()
@@ -34,6 +35,19 @@ export default function AddQuestion({
         answer.isCorrect
       )
     })
+    const tempQuestion = {
+      id: questionRes.id,
+      title: question,
+      subtitle: 'La pregunta numero: ' + (questions.length + 1),
+      answers: answers.map((answer) => {
+        return {
+          title: answer.respuesta,
+          isCorrect: answer.isCorrect
+        }
+      })
+    }
+    setListOfQuestions([...questions, tempQuestion])
+    setQuestionActive({})
     console.log('Add and Continue')
   }
   const handleAddEnd = (e) => {
@@ -47,13 +61,19 @@ export default function AddQuestion({
       return
     }
     const { question, answers } = checkData
+    console.log(questionActive)
+    console.log(question, answers)
     updateQuestion(questionActive.id, question)
     questionActive.answers.forEach((answerActive, index) => {
       updateAnswer(answerActive.id, answers[index])
     })
-    questions[questions.findIndex((item) => item.id === questionActive.id)] = {
+    const tempQuestions = [...questions]
+    tempQuestions[
+      tempQuestions.findIndex((item) => item.id === questionActive.id)
+    ] = {
       ...questionActive
     }
+    setListOfQuestions(tempQuestions)
     messageApi.open({
       type: 'success',
       content: 'Pregunta actualizada correctamente'
@@ -76,7 +96,15 @@ export default function AddQuestion({
   }
   const handleRespuestaChange = (e) => {
     const index = e.target.id.split('_')[1]
-    const { answers } = questionActive
+    let { answers } = questionActive
+    if (answers === undefined) {
+      answers = Array.from({ length: NUMBER_OF_ANSWERS }, () => {
+        return {
+          title: '',
+          isCorrect: false
+        }
+      })
+    }
     answers[index] = {
       ...answers[index],
       title: e.target.value
@@ -89,7 +117,16 @@ export default function AddQuestion({
 
   const handleRadioChange = (e) => {
     const index = e.target.value
-    const newAnswers = questionActive.answers.map((answer, i) => {
+    let { answers } = questionActive
+    if (answers === undefined) {
+      answers = Array.from({ length: NUMBER_OF_ANSWERS }, () => {
+        return {
+          title: '',
+          isCorrect: false
+        }
+      })
+    }
+    const newAnswers = answers.map((answer, i) => {
       if (index === i) {
         return { ...answer, isCorrect: true }
       } else {
@@ -152,7 +189,7 @@ export default function AddQuestion({
           })}
         </Radio.Group>
         <div className={style.butons}>
-          {(questionActive && Object.keys(questionActive).length > 0) ? (
+          {questionActive?.id !== undefined ? (
             <>
               <button onClick={handleGuardar}>Guardar</button>
               <button type="submit" onClick={handleNuevaPregunta}>

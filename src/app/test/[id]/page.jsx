@@ -1,12 +1,33 @@
-export default function Page({ params }) {
-  // recuperamos el test con el id que nos llega en params.id
-  // recuperamos las preguntas asociadas al test
-  // recuperamos las respuestas asociadas a las preguntas
-  // renderizamos el test con sus preguntas y respuestas
+import LoadQuestions from '@/components/content/LoadQuestions'
+import { getQuestionsByTestId, getQuestionInfo, getAnswersByQuestionId, getTestById } from '@/lib/tests'
 
+export default async function Page({ params }) {
+  const testInfo = await getTestById(params.id)
+  const testQuestions = await getQuestionsByTestId(params.id)
+  const questionsInfo = await Promise.all(testQuestions.map(async (question, index) => {
+    const questionInfo = await getQuestionInfo(question.question_id)
+    const answers = await getAnswersByQuestionId(question.question_id)
+    return {
+      title: questionInfo.question,
+      subtitle: 'La pregunta numero: ' + (index + 1),
+      id: question.question_id,
+      answers: answers.map((answer) => {
+        return {
+          id: answer.id,
+          title: answer.answer,
+          isCorrect: answer.iscorrect
+        }
+      })
+    }
+  }))
+  console.log('Test Page', testInfo)
   return (
     <main>
-      <h1>Test</h1>
+      <section>
+        <h1>{testInfo.name}</h1>
+        <p>{testInfo.description}</p>
+      </section>
+        <LoadQuestions questions={questionsInfo}/>
     </main>
   )
 }

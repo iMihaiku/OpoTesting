@@ -1,7 +1,6 @@
-import NoQuestions from '@/components/content/NoQuestions'
-import Questions from '@/components/content/Questions'
-import TestBasicInfo from '@/components/content/TestBasicInfo'
+import QuestionControl from '@/components/content/QuestionControl'
 import { getQuestionsByTestId, getQuestionInfo, getAnswersByQuestionId, getTestById } from '@/lib/tests'
+
 export default async function Page({ params }) {
   const testInfo = await getTestById(params.id)
   const testQuestions = await getQuestionsByTestId(params.id)
@@ -23,9 +22,6 @@ export default async function Page({ params }) {
   }))
   console.log('Q', questionsInfo)
   return (
-    <main>
-      <TestBasicInfo test={params.id} testInfo={testInfo}/>
-      {testQuestions.length === 0 ? <NoQuestions testId={params.id}/> : <Questions testId={params.id} questions={questionsInfo}/>}
-    </main>
+    <QuestionControl testInfo={testInfo} testQuestions={testQuestions} questionsInfo={questionsInfo} testId={params.id}/>
   )
 }
