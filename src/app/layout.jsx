@@ -1,6 +1,7 @@
 import { Manrope } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/headers/Header'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const manrope = Manrope({ subsets: ['latin'] })
 
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
       <body className={manrope.className}>
         <Header />
         {children}
+        <SpeedInsights />
       </body>
     </html>
   )

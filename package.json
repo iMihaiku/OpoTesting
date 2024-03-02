@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@vercel/postgres": "^0.7.2",
+    "@vercel/speed-insights": "^1.0.10",
     "antd": "^5.14.2",
     "next": "14.0.4",
     "react": "^18",
