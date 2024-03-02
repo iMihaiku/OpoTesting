@@ -152,7 +152,7 @@ export default function AddQuestion({
           })}
         </Radio.Group>
         <div className={style.butons}>
-          {Object.keys(questionActive).length > 0 ? (
+          {(questionActive && Object.keys(questionActive).length > 0) ? (
             <>
               <button onClick={handleGuardar}>Guardar</button>
               <button type="submit" onClick={handleNuevaPregunta}>
