@@ -1,0 +1,65 @@
+/* eslint-disable */
+:root{
+  --bgPrimary: #121A21;
+  --bgSecondary: #1A2633;
+  --bgButton: #1A80E5;
+  --borderSecondary: #334D66;
+  --placeholderColor: #94ADC7;
+  --colorText: #FFFFFF;
+  --colorTextSmooth: #E5E8EB;
+}
+body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+html{
+  height: 100%;
+}
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+    background-color: var(--bgPrimary);
+
+  }
+}
+.logo{
+  border-radius:13px;
+  cursor: zoom-out;
+}
+.ant-badge-status-dot{
+  height: 9px !important;
+  width: 9px !important;
+}
+.ant-card{
+  background: var(--bgSecondary);
+  border: 1px solid var(--borderSecondary);
+  border-radius: 5px;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+  width: 250px;
+}
+.ant-card:hover{
+  box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.2);
+}
+.ant-card div{
+  color: var(--colorText) !important;
+
+}
+.ant-card-body{
+  cursor: auto;
+}
+.ant-card-actions{
+  background: var(--bgSecondary) !important;
+  border-top: 1px solid var(--borderSecondary)!important;
+  border-radius: 0 0 5px 5px;
+}
+.ant-badge-status-text a{
+  color: var(--colorText) !important;
+}
+.ant-badge{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  z-index: 100;
+}

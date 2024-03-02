@@ -1,0 +1,45 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  padding: 15px;
+  box-sizing: border-box;
+  align-items: center;
+  border-bottom: 1px solid #b0b1b3c2;
+}
+.header h1{
+  margin: 0;
+}
+.header div{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.header button{
+  background-color: rgb(99, 54, 54);
+  border: none;
+  padding: 7px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  gap: 5px;
+}
+.main{
+  display: flex;
+  flex-direction: column;
+}
+.opoLogo{
+  text-decoration: none;
+  color: var(--colorText);
+}
+.loginLinks{
+  text-decoration: none;
+  color: var(--colorTextSmooth);
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+}
+.loginLinks:hover{
+  color: var(--colorText);
+  border: 1px solid var(--colorText);
+  border-radius: 5px;
+}

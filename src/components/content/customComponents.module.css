@@ -1,0 +1,173 @@
+.main{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.ant-empty-description{
+  color: var(--colorText) !important;
+}
+.noQuestions{
+  background-color: var(--bgSecondary) !important;
+  border: 1px solid var(--borderSecondary) !important;
+  border-radius: 5px !important;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2) !important;
+  padding: 20px !important;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px !important;
+}
+.questions{
+  background-color: var(--bgSecondary) !important;
+  border: 1px solid var(--borderSecondary) !important;
+  border-radius: 5px !important;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2) !important;
+  min-height: 400px;
+  margin: 0 20px 20px 20px !important;
+}
+.questions>div{
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.emptyContent{
+  color: var(--colorText) !important;
+  font-size: 17px;
+  margin: 0 0 10px 0;
+}
+.emptyContent span{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.emptyContent button{
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--bgButton);
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-shadow: rgb(190, 181, 46) 0 0 5px;
+  cursor: pointer;
+  margin: 17px 0!important;
+  width: 100%;
+  height: 40px;
+}
+
+.addQuestion{
+  background-color: var(--bgSecondary) !important;
+  border: 1px solid var(--borderSecondary) !important;
+  border-radius: 5px !important;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2) !important;
+  padding: 20px !important;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px !important;
+}
+
+.addQuestion form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  min-width: 300px;
+}
+.addQuestion form>textarea{
+  height: 200px;
+}
+.test{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.test div{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: flex-start;
+}
+.test div label{
+  font-size: 18px;
+  color: var(--colorText)
+
+}
+.textAreaQuestion{
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #2f3a45;
+  background: #52688175;
+  font-size: 18px;
+  resize: vertical;
+  width: 100%;
+  min-height: 80px;
+  box-sizing: border-box;
+}
+.butons{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: flex-end;
+  width: 100%;
+}
+.butons button{
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--bgButton);
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-shadow: rgb(190, 181, 46) 0 0 5px;
+  cursor: pointer;
+  margin: 17px 0!important;
+  width: 100%;
+  height: 40px;
+}
+.labelForm{
+  font-size: 20px;
+  color: var(--colorText);
+  font-weight: 700;
+}
+.listaQuestions{
+  border-block-end: 1px solid rgba(233, 233, 233, 0.06) !important;
+  padding: 20px;
+}
+.listaQuestions div div h4 a{
+  color: var(--colorTextSmooth) !important;
+}
+.listaQuestions div div h4 a:hover{
+  color: var(--colorText) !important;
+}
+.listaQuestions div div div{
+  color: var(--colorTextSmooth) !important;
+}
+.anadirPregunta{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 20px ;
+} 
+.anadirPregunta button{
+  border-radius: 5px;
+  border: none;
+  background-color: var(--bgButton);
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-shadow: rgb(190, 181, 46) 0 0 5px;
+  cursor: pointer;
+  width: 20%;
+  height: 40px;
+}

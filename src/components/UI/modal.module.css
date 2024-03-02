@@ -1,0 +1,91 @@
+.modal{
+  background-color: red;
+}
+.crearTest button{
+    text-decoration: none;
+    color: white;
+    background-color: #1A80E5;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px;
+    display: inline-block;
+    text-align: center;
+    width: 150px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.ventanaModal{
+  position: absolute;
+  height: 450px;
+  width: 400px;
+  top: calc(50% - 250px);
+  left: calc(50% - 200px);
+  background-color: var(--bgSecondary);
+  border-radius: 10px;
+  border: 1px solid var(--borderSecondary);
+  padding: 5px 27px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  font-size: 20px;
+  z-index: 1000;
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 56%);
+}
+.testModalForm{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+.testModalForm input{
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--borderSecondary);
+  background: var(--bgSecondary);
+  font-size: 18px;
+}
+.testModalForm textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--borderSecondary);
+  background: var(--bgSecondary);
+  font-size: 18px;
+  resize: none;
+}
+.testModalForm input::placeholder{
+  color: var(--placeholderColor);
+}
+
+.testModalForm button{
+  border-radius: 5px;
+  border: none;
+  background-color: var(--bgButton);
+  color: white;
+  cursor: pointer;
+  margin: 17px 0!important;
+  width: 100%;
+  height: 40px;
+}
+.testModalForm button:hover{
+  background-color: #555;
+}
+.testModalForm button:active{
+  background-color: #777;
+}
+
+.tituloModal{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.tituloModal span{
+  font-size: 25px;
+  color: var(--colorText);
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+}
