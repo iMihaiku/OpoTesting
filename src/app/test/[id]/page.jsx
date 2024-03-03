@@ -20,9 +20,14 @@ export default async function Page({ params }) {
       })
     }
   }))
-  console.log('Test Page', testInfo)
+  const style = {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
   return (
-    <main>
+    <main style={style}>
       <section>
         <h1>{testInfo.name}</h1>
         <p>{testInfo.description}</p>

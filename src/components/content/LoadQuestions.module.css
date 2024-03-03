@@ -1,7 +1,99 @@
-.test{
+.test {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   width: 80%;
+}
+.test>div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 10px 0;
+  border: 1px solid var(--borderSecondary);
+  border-radius: 5px;
+  background: var(--bgSecondary);
+  box-sizing: border-box;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+.test>div h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+.test>div ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px 0px 20px 40px;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+.test div ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100;
+  margin: 5px 0;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 300;
+  gap: 10px;
+}
+
+.label{
+  color: white;
+  margin: 0;
+  padding: 10px 0;
+  width: 90%;
+}
+.radio{
+  background-color: rgb(222, 230, 238);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  width: 40px;
+  height: 40px !important;
+
+}
+.radio::before{
+  content: '';
+  display: block;
+  width: 0px !important;
+  height: 0px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.radio>span{
+    background: var(--bgButton) !important;
+}
+
+
+.result{
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 20px 0;
+}
+.result button{
+  background: var(--bgButton);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: var(--colorText);
+  font-size: 1rem;
+  font-weight: 300;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.correct{
+  position: relative;
+  color: green;
+  font-size: 20px;
 }
